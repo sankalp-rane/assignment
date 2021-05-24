@@ -45,9 +45,8 @@ export class LoginPageComponent implements OnInit {
         if (user.email === this.loginForm.value['email'] && this.loginForm.value['password'] === 'pass@123') {
           sessionStorage.setItem('id', (user.id).toString());
           sessionStorage.setItem('username', user.username);
-          this.dataService.sendMessage(this.userList);
           console.log('success');
-          this.router.navigate(['/profile']);
+          this.router.navigate(['/home']);
         }
     })
   }

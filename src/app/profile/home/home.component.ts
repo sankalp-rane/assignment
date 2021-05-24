@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
 import { User } from '../../models/user.model';
+import { LoginService } from 'src/app/login.service';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-home',
@@ -11,27 +12,38 @@ export class HomeComponent implements OnInit {
 
   userList: User[] = [];
 
-  constructor(private dataService: DataService) { }
+  filteredString: string = '';
+
+  constructor(
+    private login: LoginService,
+    private dataService: DataService,
+    ) { }
 
   ngOnInit(): void {
     this.getUserData();
+    this.getFilterString();
   }
 
   public getUserData = () => {
-    this.dataService.getUserData().subscribe(
-      (data: User[]) => {
-        let username = sessionStorage.getItem('username');
+    this.login.getUsersList().subscribe(
+      (data: any) => {
         let temp: User[];
-        temp = data;
+        temp = data.body;
         temp.forEach(user => {
-          if(user.username != username)
+          if (user.username != sessionStorage.getItem('username'))
             this.userList.push(user);
-        });
-        console.log(this.userList);
+        })
       }
     );
   }
 
+  public getFilterString = () => {
+    this.dataService.dataString.subscribe(
+      (data) => {
+        this.filteredString = data;
+      }
+    )
+  }
 
 
 }

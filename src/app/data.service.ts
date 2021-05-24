@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { User } from './models/user.model'
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +7,10 @@ import { User } from './models/user.model'
 export class DataService {
 
   constructor() { }
+  
+  public dataString = new Subject<string>();
 
-  private subject = new Subject<User[]>();
-
-  public sendMessage = (data: User[]) => {
-    // console.log('data', data);
-      this.subject.next(data);
+  public setMessage = (filterString: string) => {
+    this.dataString.next(filterString);
   }
-
-  public getUserData(): Observable<User[]> {
-    return this.subject.asObservable();
-}
 }

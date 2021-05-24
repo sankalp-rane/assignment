@@ -1,0 +1,13 @@
+@import '../../../styles.scss';
+
+.navbar {
+    background-color: $primary-color;
+    width: 100%;
+}
+
+.welcome-text {
+    font-size: 36px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}

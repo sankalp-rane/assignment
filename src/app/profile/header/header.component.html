@@ -1,0 +1,5 @@
+<div class="navbar">
+    <span class="welcome-text"> Welcome, {{ userName}}</span>
+    <input type="text" [(ngModel)]="filterStatus" (ngModelChange)="onChange()">
+    {{ filterStatus }}
+</div>

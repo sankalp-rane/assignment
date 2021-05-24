@@ -1,0 +1,38 @@
+@import '../../../styles.scss';
+
+.container {
+    margin: auto;
+}
+
+.card {
+  box-shadow: 0 0px 8px 0 rgba(0,0,0,0.6);
+  width: 500px;
+  margin: 40px auto;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.tag-1 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.tag-2 {
+    font-size: 18px;
+}
+
+.success-btn {
+    background-color: $green_color;
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    padding: 3px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
