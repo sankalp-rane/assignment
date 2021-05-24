@@ -1,0 +1,27 @@
+<form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="heading" fxLayout="row" fxLayoutAlign="center center" > 
+        <h1>Login</h1>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-around center" class="form-fields">
+  
+      <div style="width: 100%" fxLayout="column" fxLayoutAlign="space-around center">
+        <div class="input-field" fxLayout="row" fxLayoutAlign="space-around center">
+          <input type="email" placeholder="Enter email here..." class="no-outline" formControlName="email" email>
+        </div>
+        <span class="error-msg" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched"> Please enter a valid email!</span>
+      </div>
+  
+      <div style="width: 100%" fxLayout="column" fxLayoutAlign="space-around center">
+        <div class="input-field" fxLayout="row" fxLayoutAlign="space-around center">
+          <input type="password" placeholder="Enter password here..." class="no-outline" formControlName="password">
+        </div>
+        <span class="error-msg" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched"> This field is required!</span>
+      </div>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <button type="submit" class="login-button">Login</button>
+    </div>
+  </form>
+  
+  {{ loginForm.value | json}}
