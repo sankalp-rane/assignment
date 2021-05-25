@@ -1,11 +1,13 @@
 <div class="navbar">
     <span class="welcome-text"> Welcome, {{ userName}}</span>
-    <input type="text" [(ngModel)]="filterStatus" (ngModelChange)="onChange()">
+    <input *ngIf="!onProfilePage" type="text" [(ngModel)]="filterStatus" (ngModelChange)="onChange()">
     <!-- {{ filterStatus }} -->
 
-    <div class="row">
+    <div *ngIf="onProfilePage" class="row">
         <div class="heading-1" (click)="routeTo('Details')">Details</div>
         <div class="heading-1" (click)="routeTo('Posts')">Posts</div>
         <div class="heading-1" (click)="routeTo('Albums')">Albums</div>
     </div>
+
+    <div class="logout-btn" (click)="logout()">Logout</div>
 </div>

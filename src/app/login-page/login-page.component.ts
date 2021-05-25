@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { User } from '../models/user.model';
-import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,8 +13,7 @@ export class LoginPageComponent implements OnInit {
 
   constructor(
     private login: LoginService,
-    private dataService: DataService, 
-    private router: Router,
+    private route: Router,
   ) { }
 
   userList: User[] = []
@@ -24,6 +22,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.getUserListData();
   }
+  
 
   public getUserListData = () => {
     this.login.getUsersList().subscribe(
@@ -46,7 +45,7 @@ export class LoginPageComponent implements OnInit {
           sessionStorage.setItem('id', (user.id).toString());
           sessionStorage.setItem('username', user.username);
           console.log('success');
-          this.router.navigate(['/home']);
+          this.route.navigate(['/home']);
         }
     })
   }

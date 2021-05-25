@@ -7,7 +7,7 @@
             <div class="tag-2"> <span class="tag-1">Email ID: </span> {{ user.email }}</div>
             <div class="tag-2"><span class="tag-1">Company name: </span> {{ user.company.name }}</div>
             <div class="tag-2"> <span class="tag-1">Phone Number: </span>{{ user.phone }}</div>
-            <div class="success-btn">View Profile</div>
+            <div class="success-btn" [routerLink]="['/home/profile', user.id] ">View Profile</div>
         </div>
     </div>
 
