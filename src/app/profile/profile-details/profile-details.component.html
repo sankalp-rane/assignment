@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngFor="let user of userList">
+    <ng-container *ngFor="let user of userList">
         <div *ngIf="user.id === id" class="card">
             <div>
                 <div class="tag-2"><span class="tag-1">Name: </span> {{ user.name}} </div>
@@ -10,5 +10,5 @@
                 <div class="tag-2"> <span class="tag-1">Phone Number: </span>{{ user.phone }}</div>
             </div>
         </div>
-    </div>
+    </ng-container>
 </div>

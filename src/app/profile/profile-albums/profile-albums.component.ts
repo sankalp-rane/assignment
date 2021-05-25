@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Album } from '../../models/album.model';
+import { LoginService } from 'src/app/login.service';
 
 @Component({
   selector: 'app-profile-albums',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileAlbumsComponent implements OnInit {
 
-  constructor() { }
+  @Input() id: number = -1;
+
+  albumList: Album[] = [];
+
+  constructor(
+    private login: LoginService,
+  ) { }
 
   ngOnInit(): void {
+    this.getUserAlbums();
   }
 
+  public getUserAlbums = () => {
+    this.login.getUserPosts().subscribe(
+      (data: any) => {
+        let temp: Album[];
+        temp = data.body;
+        temp.forEach(album => {
+          if (album.userId == this.id) {
+            this.albumList.push(album);
+          };
+        })
+        // console.log(this.albumList);
+      }
+    );
+  }
 }

@@ -1,7 +1,13 @@
 <div class="navbar">
+    
+    <a *ngIf="onProfilePage" class="previous round" [routerLink]="['/home']">&#8249;</a>
+
     <span class="welcome-text"> Welcome, {{ userName}}</span>
-    <input *ngIf="!onProfilePage" type="text" [(ngModel)]="filterStatus" (ngModelChange)="onChange()">
+    <div *ngIf="!onProfilePage" class="search-bar">
+        <input type="text" [(ngModel)]="filterStatus" (ngModelChange)="onChange()" placeholder="Search here...">
+    </div>
     <!-- {{ filterStatus }} -->
+
 
     <div *ngIf="onProfilePage" class="row">
         <div class="heading-1" (click)="routeTo('Details')">Details</div>

@@ -39,3 +39,34 @@
     font-weight: 800;
     cursor: pointer;
 }
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+    cursor: pointer;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+input {
+    outline: none;
+    border: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.search-bar {
+    padding: 5px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: white;
+    justify-content: center;
+}

@@ -1,1 +1,8 @@
-<p>profile-albums works!</p>
+<div class="container single-album">
+    <div *ngFor="let album of albumList">
+        <div>
+            <div class="folder"></div>
+            <div class="album-name"> {{ album.title }} </div>
+        </div>
+    </div>
+</div>
