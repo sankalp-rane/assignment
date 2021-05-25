@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Output, EventEmitter } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() setPage = new EventEmitter<string>();
   
   filterStatus = '';
 
@@ -17,10 +19,15 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.routeTo('Details');
   }
 
   public onChange = () => {
-    console.log(this.filterStatus);
+    // console.log(this.filterStatus);
     this.dataService.setMessage(this.filterStatus);
+  }
+
+  public routeTo = (data: string) => {
+    this.setPage.emit(data);
   }
 }

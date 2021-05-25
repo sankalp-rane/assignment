@@ -14,7 +14,7 @@ export class FilterPipe implements PipeTransform {
     // console.log(value);
     for (let user of value) {
       // console.log(user);
-      if (user.email == filterString || user.username == filterString || user.company.name == filterString)
+      if ((user.email).toLowerCase().includes(filterString.toLowerCase()) || (user.username).toLowerCase().includes(filterString.toLowerCase()) || (user.company.name).toLowerCase().includes(filterString.toLowerCase()))
         result.push(user);
     }
     return result;

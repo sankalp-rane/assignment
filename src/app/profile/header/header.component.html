@@ -1,5 +1,11 @@
 <div class="navbar">
     <span class="welcome-text"> Welcome, {{ userName}}</span>
     <input type="text" [(ngModel)]="filterStatus" (ngModelChange)="onChange()">
-    {{ filterStatus }}
+    <!-- {{ filterStatus }} -->
+
+    <div class="row">
+        <div class="heading-1" (click)="routeTo('Details')">Details</div>
+        <div class="heading-1" (click)="routeTo('Posts')">Posts</div>
+        <div class="heading-1" (click)="routeTo('Albums')">Albums</div>
+    </div>
 </div>

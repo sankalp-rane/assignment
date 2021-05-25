@@ -1,8 +1,8 @@
 <app-header></app-header>
 
-<div class="container" fxLayout="column" fxLayoutAlign="space-around center">
+<div class="container">
     <div *ngFor="let user of userList | filter: filteredString" class="card">
-        <div fxLayout="column" fxLayoutAlign="space-around center">
+        <div>
             <div class="tag-2"><span class="tag-1">Name: </span> {{ user.username}} </div>
             <div class="tag-2"> <span class="tag-1">Email ID: </span> {{ user.email }}</div>
             <div class="tag-2"><span class="tag-1">Company name: </span> {{ user.company.name }}</div>

@@ -7,13 +7,21 @@ import { HeaderComponent } from './header/header.component';
 
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../filter.pipe';
+import { ProfileDetailsComponent } from './profile-details/profile-details.component';
+import { ProfileComponent } from './profile.component';
+import { ProfileAlbumsComponent } from './profile-albums/profile-albums.component';
+import { ProfilePostsComponent } from './profile-posts/profile-posts.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
-    FilterPipe
+    FilterPipe,
+    ProfileDetailsComponent,
+    ProfileComponent,
+    ProfileAlbumsComponent,
+    ProfilePostsComponent,
   ],
   imports: [
     CommonModule,

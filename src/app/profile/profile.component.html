@@ -1,0 +1,9 @@
+<app-header (setPage)="displayPage($event)"></app-header>
+
+<!-- {{ currentPage }} -->
+
+<app-profile-details [userList]="userList" [id]="id" *ngIf="currentPage === 'Details' "></app-profile-details>
+
+<app-profile-posts *ngIf="currentPage === 'Posts' "  [id]="id"></app-profile-posts>
+
+<app-profile-albums *ngIf="currentPage === 'Albums' "></app-profile-albums>
